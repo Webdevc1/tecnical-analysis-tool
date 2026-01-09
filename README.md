@@ -1,7 +1,7 @@
 # tecnical-analysis-tool
 
-    This is a copied website that I built to learn like the name of the folder suggests. I copied this from 
-    Part time Larry. I had to work a little harder because that video was 5 years old, 
+    This is copied code for a technical screener that I built to learn like the name of the folder suggests.
+    I copied this from Part time Larry. I had to work a little harder because that video was 5 years old, 
     so I needed to go through some dependency hell with the TA-Lib and the y-finanace library. 
     
     The Y-finance library now gives the data in a multi-level header form  at which makes it difficult to use talib library
