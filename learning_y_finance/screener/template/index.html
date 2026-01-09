@@ -1,0 +1,57 @@
+{% extends "layout.html" %}
+
+{% block title %}Technical Screener{% endblock %}
+
+
+{% block content %}
+
+    <div>
+        <div class="special">
+            <p> Techical Candlestick Pattern Matcher </p>
+        </div>
+        <div id="fm">
+            <form action="{{ url_for("index") }}">
+                <select name="candle">
+                    {% for pattern in patterns %}
+                        <option value="{{ pattern }}" {% if pattern==cur_pattern %} selected="selected"{% endif %}>{{ patterns[pattern] }}</option>
+                    {% endfor %}
+                </select>
+                <input type="submit" value="Submit" id="btn">
+            </form>
+        </div>
+    </div>
+
+    <table>
+        <tr>
+            <th>
+                Ticker
+            </th>
+
+            <th>
+                CompanyName
+            </th>
+
+            <th>
+                Pattern Type Shown
+            </th>
+        </tr>
+
+        {% for stock in stocks %}
+            {% if stocks[stock][cur_pattern] %}
+                <tr>
+                    <td>
+                        {{stock}}
+                    </td>
+                    <td>
+                        {{stocks[stock]['company']}}
+                    </td>
+                    <td id="{{stocks[stock][cur_pattern]}}">
+                        {{stocks[stock][cur_pattern]}}
+                    </td>
+                </tr>
+        {% endif %}
+    {% endfor %}
+        
+    </table>
+
+{% endblock %}
